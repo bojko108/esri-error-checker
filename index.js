@@ -7,26 +7,23 @@ let errorCodes = require('./errorcodes/errorcodes.json'),
         return parseInt((number - 0xFFFFFFFF) - 1);
     };
 
-exports.esriErrorCodes = () => {
-    return {
-        search: (code) => {
-            if (!code) return null;
+module.exports = {
+    search: (code) => {
+        if (!code) return null;
 
-            let value, result = [];
+        let value, result = [];
 
-            if (code.startsWith('0x')) value = hexToDecimal(code);
-            else value = decimalToHex(code);
+        if (code.startsWith('0x')) value = hexToDecimal(Number(code));
+        else value = Number(code);
 
-            for (let category in errorCodes) {
-                let errors = errorCodes[category];
-                errors.forEach((element) => {
-                    if (element.value === value) {
-                        result.push(element);
-                    }
-                });
+        for (let category in errorCodes) {
+            let errors = errorCodes[category];
+
+            for (let i = 0; i < errors.length; i++) {
+                if (Number(errors[i].value) === value) result.push(errors[i]);
             }
-
-            return result;
         }
-    };
+
+        return result;
+    }
 };

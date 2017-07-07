@@ -1,7 +1,7 @@
 # Search for error description based on error code value
 
 This module takes an input of 10-digit decimal or 8-digit hexadecimal error code and gives 
-you a list of enumeration values. The list of error codes, included in the module can be found here: [link-docs].
+you a list of enumeration values. The list of error codes, included in the module can be found here: [ArcObjects error codes][link-docs].
 
 
 ## Installation

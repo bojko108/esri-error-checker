@@ -12,8 +12,7 @@ $ npm install esri-error-checker
 
 ## How to use
 
-The module works with both hexadecimal and decimal error codes. In order to find error's description
-by it's code simply call `search()` method:
+The module works with both hexadecimal and decimal error codes. In order to find error's description by it's code simply call `search()` method:
 
 ```js
 let errorChecker = require('esri-error-checker');
